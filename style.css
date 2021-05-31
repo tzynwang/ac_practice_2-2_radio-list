@@ -1,0 +1,301 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+}
+
+:root {
+  /* https://www.happyhues.co/palettes/14 */
+  --background-light: #fffffe;
+  --headline: #272343;
+  --paragraph: #2d334a;
+  --button: #ffd803;
+  --button-text: #272343;
+  --secondary: #e3f6f5;
+  --tertiary: #bae8e8;
+}
+
+body {
+  background-color: var(--background-light);
+  color: var(--paragraph);
+  font-family: "Montserrat", "Roboto", sans-serif;
+}
+
+h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
+  text-align: center;
+  margin: 1rem;
+}
+
+h1 a {
+  color: var(--headline);
+  text-decoration: none;
+  transition: color 0.15s ease-in-out;
+}
+
+h1 a:hover {
+  color: var(--button);
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  padding: 0 2rem;
+  margin: 0 auto 1rem;
+}
+
+header p {
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+header div {
+  margin: 0.5rem 0;
+}
+
+header i {
+  margin-right: 0.5rem;
+}
+
+#searchResultClearButton span::before {
+  content: "❌";
+}
+
+#searchButton span::before {
+  content: "🔍";
+}
+
+.form-control {
+  border-color: var(--button-text);
+}
+
+.btn {
+  color: var(--button-text);
+  background-color: var(--button);
+  border-color: var(--button-text);
+}
+
+.btn:hover, .btn:focus, .btn:active {
+  color: var(--button);
+  border-color: var(--button-text);
+  background-color: var(--button-text);
+}
+
+.btn-secondary {
+  background-color: var(--tertiary);
+}
+
+main {
+  padding: 0 2rem;
+  margin: 0 auto;
+}
+
+main p {
+  margin-bottom: 0.5rem;
+}
+
+#container {
+  border: solid 4px;
+  border-radius: 0.5rem;
+  background-color: #fff;
+}
+
+#mainUserContainer {
+  height: 50vh;
+  overflow-y: scroll;
+}
+
+#display-style-list>div {
+  display: flex;
+  align-items: center;
+  padding: 1rem 0;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.15s ease-in-out;
+}
+
+#display-style-list>div:hover {
+  background-color: var(--secondary);
+}
+
+#display-style-list span {
+  position: absolute;
+  top: 0.5rem;
+  left: 48px;
+}
+
+.badge {
+  color: var(--button-text);
+}
+
+.bg-onair {
+  background-color: var(--button);
+}
+
+.bg-off {
+  background-color: var(--tertiary);
+}
+
+#display-style-list img {
+  width: 48px;
+  border-radius: 50%;
+  margin: 0 1rem;
+}
+
+#display-style-list p {
+  margin: 0;
+}
+
+#display-style-grid {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+#display-style-grid>div {
+  flex: 0 0 27%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  padding: 1rem;
+  transition: background-color 0.15s ease-in-out;
+}
+
+#display-style-grid>div:hover {
+  background-color: var(--secondary);
+}
+
+#display-style-grid span {
+  position: absolute;
+  top: 1.5rem;
+  right: 1rem;
+}
+
+#display-style-grid img {
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+}
+
+#display-style-grid p {
+  margin: 0;
+  text-align: center;
+}
+
+.modal-title {
+  display: flex;
+  align-items: center;
+}
+
+.modal-title span {
+  margin: 0 1rem;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-body-avatar {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.modal-body-avatar.on-air::before {
+  content: "";
+  background: url(https://svgshare.com/i/Wsd.svg) no-repeat center;
+  width: 128px;
+  height: 128px;
+  position: absolute;
+  left: calc(calc(100% - 128px) / 2);
+  z-index: 99;
+  transition: opacity 0.15s ease-in-out;
+  cursor: pointer;
+}
+
+.modal-body-avatar.on-air:hover::before {
+  opacity: 0;
+}
+
+.modal-body-avatar img {
+  border-radius: 1rem;
+  width: 128px;
+  height: 128px;
+}
+
+.modal-body-description {
+  margin-top: 1rem;
+}
+
+.modal-body-description p {
+  margin-right: 1rem;
+}
+
+.modal-body-social-media {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.modal-body-social-media i {
+  margin-right: 1rem;
+  font-size: 1.5rem;
+  color: var(--button-text);
+  transition: color 0.15s ease-in-out;
+  cursor: pointer;
+}
+
+.modal-body-social-media i:hover {
+  color: var(--button);
+}
+
+#pagination {
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 1rem auto;
+}
+
+.page-link {
+  color: var(--button-text);
+  border-color: var(--button-text);
+}
+
+.page-link:hover {
+  color: var(--button);
+  background-color: var(--button-text);
+  border-color: var(--button-text);
+}
+
+.page-item.disabled .page-link {
+  border-color: var(--button-text);
+}
+
+.page-item.active .page-link {
+  color: var(--button-text);
+  border-color: var(--button-text);
+  background-color: var(--button);
+}
+
+@media screen and (min-width: 768px) {
+  header, main {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  #searchResultClearButton span::before {
+    content: "❌ Clear Search Results";
+  }
+  #searchButton span::before {
+    content: "🔍 Search DJ By Name";
+  }
+  .modal-body {
+    flex-direction: row;
+    align-items: center;
+  }
+  .modal-body-description {
+    margin-top: 0;
+    margin-left: 1rem;
+  }
+}
